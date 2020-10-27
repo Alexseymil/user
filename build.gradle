@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 task stage(dependsOn: ['build', 'clean'])
-build.mustRunAfter clean
+//build.mustRunAfter clean
 //
 //task copyToLib(type: Copy) {
 //    into "$buildDir/libs"
