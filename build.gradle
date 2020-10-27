@@ -1,6 +1,8 @@
 plugins {
     id 'java'
 }
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
 
 gradle.taskGraph.whenReady {
     taskGraph ->
