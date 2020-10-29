@@ -1,7 +1,14 @@
 plugins {
     id 'java'
 }
-task stage(dependsOn: ['build', 'clean'])
+//task stage(dependsOn: ['build', 'clean'])
+
+task releaseBuild {
+    outputs.upToDateWhen { false }
+    // generatePomFileForMavenJavaPublication.mustRunAfter(clean)
+    jar.mustRunAfter(clean)
+    releaseBuild.dependsOn(clean, build)
+}
 //build.mustRunAfter clean
 //
 //task copyToLib(type: Copy) {
@@ -37,7 +44,6 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.4.RELEASE'
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.3'
     compile group: 'org.webjars', name: 'bootstrap', version: '4.3.0'
-
 
 }
 
