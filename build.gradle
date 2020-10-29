@@ -1,10 +1,10 @@
 plugins {
     id 'java'
 }
-task stage(dependsOn: ['build', 'clean'])
+//task stage(dependsOn: ['build', 'clean'])
 
 
-
+task stage(dependsOn: ['build', 'installDist'])
 
 
 //build.mustRunAfter clean
