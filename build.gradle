@@ -3,12 +3,12 @@ plugins {
 }
 //task stage(dependsOn: ['build', 'clean'])
 
-task releaseBuild {
-    outputs.upToDateWhen { false }
-    // generatePomFileForMavenJavaPublication.mustRunAfter(clean)
-    jar.mustRunAfter(clean)
-    releaseBuild.dependsOn(clean, build)
+
+task cleanBuildPublish(type: GradleBuild) {
+    tasks = ['clean', 'build', 'publish']
 }
+
+
 //build.mustRunAfter clean
 //
 //task copyToLib(type: Copy) {
