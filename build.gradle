@@ -1,12 +1,10 @@
 plugins {
     id 'java'
 }
-//task stage(dependsOn: ['build', 'clean'])
+task stage(dependsOn: ['build', 'clean', 'publish'])
 
 
-task cleanBuildPublish(type: GradleBuild) {
-    tasks = ['clean', 'build', 'publish']
-}
+
 
 
 //build.mustRunAfter clean
