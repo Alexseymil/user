@@ -1,7 +1,7 @@
 plugins {
     id 'java'
 }
-task stage(dependsOn: ['build', 'clean', 'publish'])
+task stage(dependsOn: ['build', 'clean'])
 
 
 
